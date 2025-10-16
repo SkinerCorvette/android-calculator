@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CalculatorApp</string>
+    <string name="calculator">КАЛЬКУЛЯТОР</string>
+    <string name="calculator_icon">Иконка калькулятора</string>
+    <string name="start_working">Приступить к работе</string>
+</resources>
