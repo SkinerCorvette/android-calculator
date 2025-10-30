@@ -64,7 +64,8 @@
             android:text="C"
             android:textSize="18sp"
             android:background="@drawable/button_clear"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:gravity="center" />
 
         <Button
             android:id="@+id/buttonDivide"
@@ -249,7 +250,8 @@
             android:text="2"
             android:textSize="18sp"
             android:background="@drawable/button_number"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:gravity="center" />
 
         <Button
             android:id="@+id/button3"
@@ -325,6 +327,7 @@
             android:textSize="16sp"
             android:background="@drawable/button_equals"
             android:textColor="@color/white" />
+
 
     </GridLayout>
 

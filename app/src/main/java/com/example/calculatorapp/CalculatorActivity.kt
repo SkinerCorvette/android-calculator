@@ -35,14 +35,17 @@ class CalculatorActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_calculator)
 
+        initializeViews()
+
         if (savedInstanceState != null) {
             currentInput = savedInstanceState.getString("currentInput", "0")
             firstOperand = savedInstanceState.getDouble("firstOperand", 0.0)
             currentOperator = savedInstanceState.getString("currentOperator", "")
             shouldResetInput = savedInstanceState.getBoolean("shouldResetInput", false)
+            updateDisplay()
+            updateOperationDisplay()
         }
 
-        initializeViews()
         setupNumberButtons()
         setupOperatorButtons()
         setupConverterButton()
@@ -181,8 +184,16 @@ class CalculatorActivity : AppCompatActivity() {
     private fun updateDisplay() {
         displayText.text = currentInput
     }
-
     private fun updateOperationDisplay() {
-        operationText.text = "$firstOperand $currentOperator"
+        if (currentOperator.isNotEmpty()) {
+            val formattedFirstOperand = if (firstOperand == firstOperand.toLong().toDouble()) {
+                firstOperand.toLong().toString()
+            } else {
+                firstOperand.toString()
+            }
+            operationText.text = "$formattedFirstOperand $currentOperator"
+        } else {
+            operationText.text = ""
+        }
     }
 }
